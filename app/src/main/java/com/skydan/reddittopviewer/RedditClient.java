@@ -82,7 +82,8 @@ public class RedditClient {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 try {
-                    JSONArray children = response.getJSONArray("children");
+                    JSONObject object = response.getJSONObject("data");
+                    JSONArray children = object.getJSONArray("children");
                     for(int i=0;i<children.length();i++){
                         JSONObject data = children.getJSONObject(i);
                         RedditPost post = new RedditPost();
