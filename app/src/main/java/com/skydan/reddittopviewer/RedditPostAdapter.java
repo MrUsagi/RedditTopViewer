@@ -14,8 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
-import java.time.Instant;
-import java.util.Date;
 import java.util.List;
 
 public class RedditPostAdapter extends RecyclerView.Adapter<RedditPostAdapter.ViewHolder> {
@@ -55,9 +53,9 @@ public class RedditPostAdapter extends RecyclerView.Adapter<RedditPostAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        long diff = System.currentTimeMillis() - _posts.get(position).getDateOfPost().getTime();
+        long diff = System.currentTimeMillis() - _posts.get(position).getDateOfPost();
         int hours = (int)diff / (60 * 60 * 1000);
-        int commentNumber = _posts.get(position).getPostNumber();
+        int commentNumber = _posts.get(position).getCommentNumber();
         holder.author.setText(_posts.get(position).getAuthor());
         holder.date.setText(_context.getResources().getQuantityString(R.plurals.hours, hours, hours));
         holder.comments.setText(_context.getResources().getQuantityString(R.plurals.comments, commentNumber, commentNumber));

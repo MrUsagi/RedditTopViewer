@@ -4,17 +4,18 @@ import java.util.Date;
 
 public class RedditPost {
     private String _author;
-    private Date _dateOfPost;
+    private long _dateOfPost;
     private String _thumbnailImageURL;
-    private int _postNumber;
+    private int _commentNumber;
     private String _fullImageURL;
 
-    public RedditPost(String author, Date datePost,
-                      String thumbnailImageURL, int postNumber, String fullImageURL){
+    public RedditPost(){}
+    public RedditPost(String author, long datePost,
+                      String thumbnailImageURL, int commentNumber, String fullImageURL){
         this._author = author;
         this._dateOfPost = datePost;
         this._thumbnailImageURL = thumbnailImageURL;
-        this._postNumber = postNumber;
+        this._commentNumber = commentNumber;
         this._fullImageURL = fullImageURL;
     }
 
@@ -22,12 +23,12 @@ public class RedditPost {
         return _author;
     }
 
-    public Date getDateOfPost() {
+    public long getDateOfPost() {
         return _dateOfPost;
     }
 
-    public int getPostNumber() {
-        return _postNumber;
+    public int getCommentNumber() {
+        return _commentNumber;
     }
 
     public String getThumbnailImageURL() {
@@ -42,7 +43,7 @@ public class RedditPost {
         this._author = _author;
     }
 
-    public void setDateOfPost(Date _dateOfPost) {
+    public void setDateOfPost(long _dateOfPost) {
         this._dateOfPost = _dateOfPost;
     }
 
@@ -50,8 +51,8 @@ public class RedditPost {
         this._fullImageURL = _fullImageURL;
     }
 
-    public void setPostNumber(int _postNumber) {
-        this._postNumber = _postNumber;
+    public void setCommentNumber(int _commentNumber) {
+        this._commentNumber = _commentNumber;
     }
 
     public void setThumbnailImageURL(String _thumbnailImageURL) {
